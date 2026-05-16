@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://dqy61t4t677jf"]
+
+[ext_resource type="Script" uid="uid://brkmtij1x4aqo" path="res://Scenes/meteor.gd" id="1_wm1ig"]
+[ext_resource type="Texture2D" uid="uid://bmab1ksuex747" path="res://Space shooter asset/kenney_space-shooter-remastered/PNG/Meteors/meteorGrey_big1.png" id="2_wm1ig"]
+[ext_resource type="AudioStream" uid="uid://e22oulpemwbg" path="res://Space shooter asset/kenney_space-shooter-remastered/Bonus/sfx_lose.ogg" id="3_bgiwl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bgiwl"]
+radius = 43.185646
+
+[node name="Meteor" type="Area2D"]
+collision_layer = 2
+collision_mask = 9
+script = ExtResource("1_wm1ig")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_wm1ig")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_bgiwl")
+
+[node name="ExplosionSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_bgiwl")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

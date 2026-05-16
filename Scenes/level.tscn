@@ -1,0 +1,166 @@
+[gd_scene load_steps=12 format=3 uid="uid://bnmiu5yl2uorv"]
+
+[ext_resource type="Texture2D" uid="uid://d1ucddjiav8t1" path="res://Space shooter asset/kenney_space-shooter-remastered/Backgrounds/blue.png" id="1_6phgx"]
+[ext_resource type="Script" uid="uid://c6e5pfqw5kxho" path="res://Scenes/level.gd" id="1_81xng"]
+[ext_resource type="PackedScene" uid="uid://csawnrv0otvoi" path="res://Scenes/player.tscn" id="2_81xng"]
+[ext_resource type="Texture2D" uid="uid://dltvq7oijqjc4" path="res://Space shooter asset/kenney_space-shooter-remastered/PNG/Effects/star1.png" id="4_0f350"]
+[ext_resource type="Texture2D" uid="uid://bipqd88ak4ni1" path="res://Space shooter asset/kenney_space-shooter-remastered/PNG/Effects/star2.png" id="5_8c0lf"]
+[ext_resource type="Texture2D" uid="uid://dohi4ny6pfqse" path="res://Space shooter asset/kenney_space-shooter-remastered/PNG/Effects/star3.png" id="6_754fn"]
+[ext_resource type="PackedScene" uid="uid://cpveqji7ls8um" path="res://Scenes/ui.tscn" id="7_8c0lf"]
+[ext_resource type="AudioStream" uid="uid://vpk0brm5ijm8" path="res://the_mountain-game-179496.mp3" id="8_754fn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bvt00"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_0f350")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8c0lf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_754fn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6phgx"]
+size = Vector2(38, 647)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_81xng"]
+size = Vector2(1184, 23)
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_81xng")
+
+[node name="Bg" type="Sprite2D" parent="."]
+position = Vector2(578, 322.5)
+scale = Vector2(4.6328125, 2.6679688)
+texture = ExtResource("1_6phgx")
+metadata/_edit_lock_ = true
+
+[node name="Stars" type="Node2D" parent="."]
+scale = Vector2(0.8, 0.8)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Stars"]
+sprite_frames = SubResource("SpriteFrames_bvt00")
+autoplay = "default"
+frame_progress = 0.5513729
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Stars"]
+sprite_frames = SubResource("SpriteFrames_bvt00")
+autoplay = "default"
+frame_progress = 0.76406205
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Stars"]
+sprite_frames = SubResource("SpriteFrames_bvt00")
+autoplay = "default"
+frame_progress = 0.76406205
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="Stars"]
+sprite_frames = SubResource("SpriteFrames_bvt00")
+autoplay = "default"
+frame_progress = 0.76406205
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="Stars"]
+sprite_frames = SubResource("SpriteFrames_bvt00")
+autoplay = "default"
+frame_progress = 0.76406205
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="Stars"]
+sprite_frames = SubResource("SpriteFrames_bvt00")
+autoplay = "default"
+frame_progress = 0.76406205
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="Stars"]
+sprite_frames = SubResource("SpriteFrames_bvt00")
+autoplay = "default"
+frame_progress = 0.76406205
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="Stars"]
+sprite_frames = SubResource("SpriteFrames_bvt00")
+autoplay = "default"
+frame_progress = 0.76406205
+
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="Stars"]
+sprite_frames = SubResource("SpriteFrames_bvt00")
+autoplay = "default"
+frame_progress = 0.76406205
+
+[node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="Stars"]
+sprite_frames = SubResource("SpriteFrames_bvt00")
+autoplay = "default"
+frame_progress = 0.76406205
+
+[node name="AnimatedSprite2D11" type="AnimatedSprite2D" parent="Stars"]
+sprite_frames = SubResource("SpriteFrames_bvt00")
+autoplay = "default"
+frame_progress = 0.76406205
+
+[node name="AnimatedSprite2D12" type="AnimatedSprite2D" parent="Stars"]
+sprite_frames = SubResource("SpriteFrames_bvt00")
+autoplay = "default"
+frame_progress = 0.76406205
+
+[node name="AnimatedSprite2D13" type="AnimatedSprite2D" parent="Stars"]
+sprite_frames = SubResource("SpriteFrames_bvt00")
+autoplay = "default"
+frame_progress = 0.76406205
+
+[node name="AnimatedSprite2D14" type="AnimatedSprite2D" parent="Stars"]
+sprite_frames = SubResource("SpriteFrames_bvt00")
+autoplay = "default"
+frame_progress = 0.76406205
+
+[node name="AnimatedSprite2D15" type="AnimatedSprite2D" parent="Stars"]
+sprite_frames = SubResource("SpriteFrames_bvt00")
+autoplay = "default"
+frame_progress = 0.76406205
+
+[node name="Player" parent="." instance=ExtResource("2_81xng")]
+position = Vector2(576, 467)
+
+[node name="border" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="border"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="border/StaticBody2D"]
+position = Vector2(-19, 323)
+shape = SubResource("RectangleShape2D_6phgx")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="border"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="border/StaticBody2D2"]
+position = Vector2(1171, 324)
+shape = SubResource("RectangleShape2D_6phgx")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="border"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="border/StaticBody2D3"]
+position = Vector2(572, -12)
+shape = SubResource("RectangleShape2D_81xng")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="border"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="border/StaticBody2D4"]
+position = Vector2(585, 660)
+shape = SubResource("RectangleShape2D_81xng")
+
+[node name="MeteorTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="Meteors" type="Node2D" parent="."]
+
+[node name="Lasers" type="Node2D" parent="."]
+
+[node name="UI" parent="." instance=ExtResource("7_8c0lf")]
+
+[node name="GameSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_754fn")
+autoplay = true
+
+[connection signal="laser" from="Player" to="." method="_on_player_laser"]
+[connection signal="timeout" from="MeteorTimer" to="." method="_on_meteor_timer_timeout"]

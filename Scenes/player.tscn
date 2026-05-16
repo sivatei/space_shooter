@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://csawnrv0otvoi"]
+
+[ext_resource type="Script" uid="uid://bya7uwhndjv4m" path="res://Scenes/player.gd" id="1_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://colh6oe14rw4v" path="res://Space shooter asset/kenney_space-shooter-remastered/PNG/playerShip2_blue.png" id="1_v0iea"]
+[ext_resource type="AudioStream" uid="uid://cyk7rnyli75mk" path="res://Space shooter asset/kenney_space-shooter-remastered/Bonus/sfx_laser2.ogg" id="3_6t5aa"]
+[ext_resource type="AudioStream" uid="uid://e22oulpemwbg" path="res://Space shooter asset/kenney_space-shooter-remastered/Bonus/sfx_lose.ogg" id="4_vgqql"]
+
+[sub_resource type="Gradient" id="Gradient_vgqql"]
+offsets = PackedFloat32Array(0.39207047, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_fkybt"]
+gradient = SubResource("Gradient_vgqql")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vgqql"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 60, 0)
+scale_min = 2.0
+scale_max = 20.0
+color = Color(1, 0.91764706, 0.61960787, 1)
+color_ramp = SubResource("GradientTexture1D_fkybt")
+
+[node name="Player" type="CharacterBody2D" groups=["player", "ui"]]
+script = ExtResource("1_cvnsp")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(1, 30)
+lifetime = 0.8
+process_material = SubResource("ParticleProcessMaterial_vgqql")
+
+[node name="Ship" type="Sprite2D" parent="."]
+texture = ExtResource("1_v0iea")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-4, -39, 3, -38, 10, -18, 55, 5, 36, 34, 17, 28, 12, 37, -11, 37, -18, 28, -37, 34, -56, 5, -14, -15)
+
+[node name="LaserTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="LaserSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_6t5aa")
+
+[node name="DamageSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_vgqql")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+enabled = false
+
+[connection signal="timeout" from="LaserTimer" to="." method="_on_laser_timer_timeout"]
