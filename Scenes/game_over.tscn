@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b7lq8j4raw0q7"]
 
-[ext_resource type="Script" uid="uid://cgfswy4rp44y2" path="res://Scenes/game_over.gd" id="1_ek8ke"]
+[ext_resource type="Script" uid="uid://cgfswy4rp44y2" path="res://Scenes/GameOver.cs" id="1_ek8ke"]
 [ext_resource type="FontFile" uid="uid://bnfmojfkhoxxy" path="res://Space shooter asset/kenney_space-shooter-remastered/Bonus/kenvector_future.ttf" id="1_y26ei"]
 [ext_resource type="PackedScene" uid="uid://bnmiu5yl2uorv" path="res://Scenes/level.tscn" id="2_eoghk"]
 [ext_resource type="AudioStream" uid="uid://bs1iwt62haxk0" path="res://universfield-game-over-deep-male-voice-clip-352695.mp3" id="4_eoghk"]
@@ -76,3 +76,4 @@ text = "press space to start again"
 [node name="GameOverSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_eoghk")
 autoplay = true
+

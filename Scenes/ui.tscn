@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cpveqji7ls8um"]
 
-[ext_resource type="Script" uid="uid://bhcvrvgsx70ah" path="res://Scenes/ui.gd" id="1_nf4gj"]
+[ext_resource type="Script" uid="uid://bhcvrvgsx70ah" path="res://Scenes/UI.cs" id="1_nf4gj"]
 [ext_resource type="FontFile" uid="uid://bnfmojfkhoxxy" path="res://Space shooter asset/kenney_space-shooter-remastered/Bonus/kenvector_future.ttf" id="1_qdvrb"]
 
 [node name="UI" type="CanvasLayer" groups=["ui"]]
@@ -49,3 +49,4 @@ theme_override_constants/separation = 8
 autostart = true
 
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
+

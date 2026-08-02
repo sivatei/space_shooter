@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://csawnrv0otvoi"]
 
-[ext_resource type="Script" uid="uid://bya7uwhndjv4m" path="res://Scenes/player.gd" id="1_cvnsp"]
+[ext_resource type="Script" uid="uid://bya7uwhndjv4m" path="res://Scenes/Player.cs" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://colh6oe14rw4v" path="res://Space shooter asset/kenney_space-shooter-remastered/PNG/playerShip2_blue.png" id="1_v0iea"]
 [ext_resource type="AudioStream" uid="uid://cyk7rnyli75mk" path="res://Space shooter asset/kenney_space-shooter-remastered/Bonus/sfx_laser2.ogg" id="3_6t5aa"]
 [ext_resource type="AudioStream" uid="uid://e22oulpemwbg" path="res://Space shooter asset/kenney_space-shooter-remastered/Bonus/sfx_lose.ogg" id="4_vgqql"]
@@ -47,3 +47,4 @@ stream = ExtResource("4_vgqql")
 enabled = false
 
 [connection signal="timeout" from="LaserTimer" to="." method="_on_laser_timer_timeout"]
+

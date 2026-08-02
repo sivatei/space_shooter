@@ -8,15 +8,23 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="Space Shooter Game"
 run/main_scene="uid://bnmiu5yl2uorv"
-config/features=PackedStringArray("4.5", "Forward Plus")
+config/features=PackedStringArray("4.6", "Forward Plus")
 
 [autoload]
 
-Global="*res://global/global.gd"
+Global="*res://global/Global.cs"
+
+[dotnet]
+
+project/assembly_name="Space Shooter Game"
 
 [global_group]
 
@@ -57,3 +65,4 @@ shoot={
 2d_physics/layer_2="meteor"
 2d_physics/layer_3="walls"
 2d_physics/layer_4="laser"
+

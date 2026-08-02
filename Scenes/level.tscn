@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://bnmiu5yl2uorv"]
 
 [ext_resource type="Texture2D" uid="uid://d1ucddjiav8t1" path="res://Space shooter asset/kenney_space-shooter-remastered/Backgrounds/blue.png" id="1_6phgx"]
-[ext_resource type="Script" uid="uid://c6e5pfqw5kxho" path="res://Scenes/level.gd" id="1_81xng"]
+[ext_resource type="Script" uid="uid://c6e5pfqw5kxho" path="res://Scenes/Level.cs" id="1_81xng"]
 [ext_resource type="PackedScene" uid="uid://csawnrv0otvoi" path="res://Scenes/player.tscn" id="2_81xng"]
 [ext_resource type="Texture2D" uid="uid://dltvq7oijqjc4" path="res://Space shooter asset/kenney_space-shooter-remastered/PNG/Effects/star1.png" id="4_0f350"]
 [ext_resource type="Texture2D" uid="uid://bipqd88ak4ni1" path="res://Space shooter asset/kenney_space-shooter-remastered/PNG/Effects/star2.png" id="5_8c0lf"]
@@ -164,3 +164,4 @@ autoplay = true
 
 [connection signal="laser" from="Player" to="." method="_on_player_laser"]
 [connection signal="timeout" from="MeteorTimer" to="." method="_on_meteor_timer_timeout"]
+
