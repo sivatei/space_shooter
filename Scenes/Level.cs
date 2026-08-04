@@ -31,7 +31,7 @@ public partial class Level : Node2D
     {
         var meteor = _meteorScene.Instantiate<Area2D>();
         GetNode("Meteors").AddChild(meteor);
-        meteor.Connect("collision", new Callable(this, MethodName._on_meteor_collision));
+        meteor.Connect(Meteor.SignalName.Collision, new Callable(this, MethodName._on_meteor_collision));
     }
 
     public void _on_meteor_collision()
